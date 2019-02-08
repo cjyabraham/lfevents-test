@@ -1,0 +1,6 @@
+name: lfevents-test
+recipe: pantheon
+config:
+  framework: wordpress
+  site: lfevents-test
+  id: 9b2ca821-4493-42f3-96ee-344c56803739
