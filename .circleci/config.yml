@@ -88,10 +88,6 @@ jobs:
             - run:
                 name: copy vendor/web
                 command: cp -r /tmp/vendor .
-
-            - run:
-                name: check for WordPress coding standards
-                command: composer -n code-sniff
             
             - run:
                 name: run unit tests
