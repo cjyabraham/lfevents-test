@@ -20,7 +20,6 @@
     "pantheon-systems/wordpress-composer": "^5.0.3",
     "roots/wp-password-bcrypt": "^1.0.0",
     "rvtraveller/qs-composer-installer": "^1.1",
-    "terminus-plugin-project/terminus-wraith-plugin": "^1.0",
     "vlucas/phpdotenv": "^2.4.0",
     "wpackagist-plugin/pantheon-advanced-page-cache": "^0.1.4",
     "wpackagist-plugin/wp-native-php-sessions": "^0.6.0",

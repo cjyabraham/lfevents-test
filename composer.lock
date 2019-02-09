@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4444ae647d895220f055179265ee6a3a",
+    "content-hash": "e028346ed1365f6b0842da52707ba893",
     "packages": [
         {
             "name": "composer/installers",
@@ -324,61 +324,6 @@
             "description": "Install Quicksilver modules for Pantheon into custom locations.",
             "homepage": "https://github.com/rvtraveller/qs-composer-installer",
             "time": "2017-01-27T20:40:31+00:00"
-        },
-        {
-            "name": "terminus-plugin-project/terminus-wraith-plugin",
-            "version": "1.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/terminus-plugin-project/terminus-wraith-plugin.git",
-                "reference": "53be8b84c4c04d09180276d05c6e687f1e981f46"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/terminus-plugin-project/terminus-wraith-plugin/zipball/53be8b84c4c04d09180276d05c6e687f1e981f46",
-                "reference": "53be8b84c4c04d09180276d05c6e687f1e981f46",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.5 || ^7.0"
-            },
-            "require-dev": {
-                "squizlabs/php_codesniffer": "^2.7"
-            },
-            "type": "terminus-plugin",
-            "extra": {
-                "terminus": {
-                    "compatible-version": "^1"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "TerminusPluginProject\\TerminusWraith\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ed Reel",
-                    "email": "edreel@gmail.com",
-                    "homepage": "https://github.com/uberhacker",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Wraith - A Terminus plugin to assist with visual regression testing of Pantheon site environments.",
-            "homepage": "https://github.com/terminus-plugin-project/terminus-wraith-plugin",
-            "keywords": [
-                "pantheon",
-                "plugin",
-                "regression",
-                "terminus",
-                "testing",
-                "wraith"
-            ],
-            "time": "2017-04-24T02:39:00+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
