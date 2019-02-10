@@ -158,7 +158,7 @@ jobs:
                 name: copy vendor
                 command: cp -r /tmp/vendor .
  
-             - run:
+            - run:
                 name: dependencies
                 command: ./.circleci/set-up-globals.sh
 
