@@ -187,3 +187,4 @@ workflows:
             requires:
                 - build
                 - build_and_deploy                
+                - behat-test
