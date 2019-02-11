@@ -25,8 +25,8 @@ set -ex
 terminus -n env:clear-cache $TERMINUS_SITE.$TERMINUS_ENV
 
 # Set Behat variables from environment variables
-export BEHAT_PARAMS='{"extensions":{"Behat\\MinkExtension":{"base_url":"https://'$TERMINUS_ENV'-'$TERMINUS_SITE'.pantheonsite.io"},"PaulGibbs\\WordpressBehatExtension":{"site_url":"https://'$TERMINUS_ENV'-'$TERMINUS_SITE'.pantheonsite.io/wp","users":{"admin":{"username":"'$ADMIN_USERNAME'","password":"'$ADMIN_PASSWORD'"}},"wpcli":{"binary":"terminus -n wp '$TERMINUS_SITE'.'$TERMINUS_ENV' --"}}}}'
-export RELOCATED_WP_ADMIN=TRUE
+# export BEHAT_PARAMS='{"extensions":{"Behat\\MinkExtension":{"base_url":"https://'$TERMINUS_ENV'-'$TERMINUS_SITE'.pantheonsite.io"},"PaulGibbs\\WordpressBehatExtension":{"site_url":"https://'$TERMINUS_ENV'-'$TERMINUS_SITE'.pantheonsite.io/wp","users":{"admin":{"username":"'$ADMIN_USERNAME'","password":"'$ADMIN_PASSWORD'"}},"wpcli":{"binary":"terminus -n wp '$TERMINUS_SITE'.'$TERMINUS_ENV' --"}}}}'
+# export RELOCATED_WP_ADMIN=TRUE
 
 # Wake the multidev environment before running tests
 terminus -n env:wake $TERMINUS_SITE.$TERMINUS_ENV
@@ -35,7 +35,15 @@ terminus -n env:wake $TERMINUS_SITE.$TERMINUS_ENV
 terminus -n wp $TERMINUS_SITE.$TERMINUS_ENV -- cli version
 
 # Run the Wraith tests
-cd wraith && wraith capture --config=behat/behat-pantheon.yml --strict "$@"
+cd wraith
+cp configs/capture.yaml.template configs/capture.yaml 
+cat >>configs/capture.yaml <<EOL
+# (required) The domains to take screenshots of.
+domains:
+  current:  "http://live-lfevents-test.pantheonsite.io"
+  new:      "http://$TERMINUS_SITE.$TERMINUS_ENV"
+EOL
+wraith capture capture
 
 # Change back into previous directory
 cd -
