@@ -26,11 +26,10 @@ TERMINUS_DOES_MULTIDEV_EXIST()
 # I don't know if on non-pull requests CIRCLE_PULL_REQUEST is empty or complete
 # absent -z will return true in either cases.
 #if [[ ${CIRCLE_BRANCH} != "master" && -z ${CIRCLE_PULL_REQUEST} ]];
-if [[ ${CIRCLE_BRANCH} != "master" ]];
-then
-    echo -e "CircleCI will only deploy to Pantheon if on the master branch or creating a pull requests.\n"
-    exit 0;
-fi
+# then
+#     echo -e "CircleCI will only deploy to Pantheon if on the master branch or creating a pull requests.\n"
+#     exit 0;
+# fi
 
 if ! TERMINUS_DOES_MULTIDEV_EXIST ${TERMINUS_ENV}
 then
