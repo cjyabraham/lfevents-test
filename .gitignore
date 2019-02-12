@@ -40,7 +40,6 @@ web/private/scripts/quicksilver
 
 wraith/shots
 wraith/configs/capture.yaml
-.circleci/images/
 
 # :::::::::::::::::::::: cut ::::::::::::::::::::::
 
