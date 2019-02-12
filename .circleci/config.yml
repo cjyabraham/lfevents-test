@@ -2,7 +2,6 @@
 defaults: &defaults
   docker:
     - image: drupaldocker/php:7.1-cli
-    - image: bbcnews/wraith
   working_directory: ~/example_wordpress_composer
   environment:
     #=========================================================================
@@ -142,22 +141,16 @@ jobs:
                 command: ./.circleci/behat-test.sh
 
     wraith_test:
-        <<: *defaults
+        docker:
+            - image: bbcnews/wraith
+
         steps:
             - checkout
-
-            - attach_workspace:
-                # Must be absolute path or relative path from working_directory
-                at: /tmp
 
             - restore_cache:
                 keys:
                     - terminus-install
 
-            - run:
-                name: copy vendor
-                command: cp -r /tmp/vendor .
- 
             - run:
                 name: dependencies
                 command: ./.circleci/set-up-globals.sh
@@ -181,7 +174,7 @@ workflows:
       - code_sniff_unit_test:
             requires:
                 - build
-      # Run Behat tests after deploy so they can be done on Pantheon
+      # Run tests after deploy so they can be done on Pantheon
       - behat_test:
             requires:
                 - build
