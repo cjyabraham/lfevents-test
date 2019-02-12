@@ -147,14 +147,6 @@ jobs:
         steps:
             - checkout
 
-            - restore_cache:
-                keys:
-                    - terminus-install
-
-            - run:
-                name: dependencies
-                command: ./.circleci/set-up-globals.sh
-
             - run:
                 name: run Wraith tests
                 command: ./.circleci/wraith-test.sh   
