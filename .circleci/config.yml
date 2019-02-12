@@ -93,7 +93,7 @@ jobs:
                 name: run unit tests
                 command: composer -n unit-test
 
-    build_and_deploy:
+    deploy:
         <<: *defaults
         steps:
             - checkout
@@ -160,8 +160,8 @@ workflows:
     jobs:
       # Install dev dependencies
       - build
-      # Build and deploy
-      - build_and_deploy
+      # deploy
+      - deploy
       # Code sniff and unit text first
       - code_sniff_unit_test:
             requires:
@@ -170,7 +170,7 @@ workflows:
       - behat_test:
             requires:
                 - build
-                - build_and_deploy
+                - deploy
       - wraith_test:
             requires:
                 - behat_test
