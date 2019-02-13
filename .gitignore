@@ -39,7 +39,6 @@ web/private/scripts/quicksilver
 # Keep all additions above the "cut" line.
 
 wraith/shots
-wraith/configs/capture.yaml
 
 # :::::::::::::::::::::: cut ::::::::::::::::::::::
 
