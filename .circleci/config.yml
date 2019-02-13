@@ -166,10 +166,10 @@ workflows:
       - build
       # deploy
       - deploy
-      # Code sniff and unit text first
-      - code_sniff_unit_test:
-            requires:
-                - build
+    #   # Code sniff and unit text first
+    #   - code_sniff_unit_test:
+    #         requires:
+    #             - build
       # Run tests after deploy so they can be done on Pantheon
       - behat_test:
             requires:
